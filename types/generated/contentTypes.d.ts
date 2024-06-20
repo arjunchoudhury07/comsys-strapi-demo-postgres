@@ -362,6 +362,54 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
+export interface ApiCommitteeCommittee extends Schema.CollectionType {
+  collectionName: 'committees';
+  info: {
+    singularName: 'committee';
+    pluralName: 'committees';
+    displayName: 'committee';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    designation: Attribute.String;
+    university: Attribute.String;
+    linkedIn_profile: Attribute.String;
+    Profile_link: Attribute.String;
+    profile_picture: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    year: Attribute.Integer;
+    subsection: Attribute.Enumeration<
+      [
+        'chief patron',
+        'patrons',
+        'general chair',
+        'organizing chairs',
+        'program chairs',
+        'track chairs',
+        'publicity chairs'
+      ]
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::committee.committee',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::committee.committee',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -798,6 +846,7 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
+      'api::committee.committee': ApiCommitteeCommittee;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
