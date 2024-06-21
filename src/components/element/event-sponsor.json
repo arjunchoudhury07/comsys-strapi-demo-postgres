@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_element_event_sponsors",
+  "info": {
+    "displayName": "eventSponsor"
+  },
+  "options": {},
+  "attributes": {
+    "sponsorName": {
+      "type": "string",
+      "required": true
+    },
+    "sponsorLogo": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}

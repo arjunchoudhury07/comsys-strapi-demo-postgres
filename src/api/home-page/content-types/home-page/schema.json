@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "home_pages",
+  "info": {
+    "singularName": "home-page",
+    "pluralName": "home-pages",
+    "displayName": "HomePage",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "HeroSection": {
+      "type": "component",
+      "repeatable": true,
+      "component": "element.hero-section"
+    },
+    "AboutTheConference": {
+      "type": "component",
+      "repeatable": true,
+      "component": "element.about-conference"
+    },
+    "trackDetails": {
+      "type": "component",
+      "repeatable": true,
+      "component": "element.track-details"
+    },
+    "distinguishedSpeaker": {
+      "type": "component",
+      "repeatable": true,
+      "component": "element.distinguished-speaker"
+    },
+    "importantDates": {
+      "type": "component",
+      "repeatable": true,
+      "component": "element.important-dates"
+    },
+    "EventSponsor": {
+      "type": "component",
+      "repeatable": true,
+      "component": "element.event-sponsor"
+    }
+  }
+}
