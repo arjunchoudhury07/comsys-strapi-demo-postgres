@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_element_important_dates",
+  "info": {
+    "displayName": "ImportantDates"
+  },
+  "options": {},
+  "attributes": {
+    "paperSubmissionOpens": {
+      "type": "string",
+      "required": true
+    },
+    "submissionDeadline": {
+      "type": "string",
+      "required": true
+    },
+    "acceptanceNotification": {
+      "type": "string",
+      "required": true
+    },
+    "registrationDue": {
+      "type": "string",
+      "required": true
+    },
+    "cameraReadySubmission": {
+      "type": "string",
+      "required": true
+    },
+    "mainSession": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

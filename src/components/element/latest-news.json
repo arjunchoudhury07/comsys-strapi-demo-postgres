@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_element_latest_news",
+  "info": {
+    "displayName": "LatestNews"
+  },
+  "options": {},
+  "attributes": {
+    "noticeTitle": {
+      "type": "text",
+      "required": true
+    },
+    "postedOn": {
+      "type": "date",
+      "required": true
+    },
+    "isActive": {
+      "type": "boolean"
+    },
+    "viewNotice": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

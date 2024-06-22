@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_element_track_details",
+  "info": {
+    "displayName": "TrackDetails",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "trackTitle": {
+      "type": "text",
+      "required": true
+    },
+    "trackDescription": {
+      "type": "text",
+      "required": true
+    }
+  }
+}
