@@ -37,6 +37,19 @@ export interface ElementEventSponsor extends Schema.Component {
   };
 }
 
+export interface ElementGallaryCard extends Schema.Component {
+  collectionName: 'components_element_gallary_cards';
+  info: {
+    displayName: 'Gallary_Card';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.String & Attribute.Required;
+    Thumbnail_Image: Attribute.Media<'images'> & Attribute.Required;
+    Image_Url: Attribute.Text & Attribute.Required;
+  };
+}
+
 export interface ElementHeroSection extends Schema.Component {
   collectionName: 'components_element_hero_sections';
   info: {
@@ -49,6 +62,16 @@ export interface ElementHeroSection extends Schema.Component {
     mainSessionDate: Attribute.String & Attribute.Required;
     venue: Attribute.Text & Attribute.Required;
     organizedBy: Attribute.Text & Attribute.Required;
+  };
+}
+
+export interface ElementImageSlider extends Schema.Component {
+  collectionName: 'components_element_image_sliders';
+  info: {
+    displayName: 'Image_Slider';
+  };
+  attributes: {
+    Image: Attribute.Media<'images'>;
   };
 }
 
@@ -80,6 +103,31 @@ export interface ElementLatestNews extends Schema.Component {
   };
 }
 
+export interface ElementPlacesToVisit extends Schema.Component {
+  collectionName: 'components_element_places_to_visits';
+  info: {
+    displayName: 'Places_To_Visit';
+  };
+  attributes: {
+    Place_Name: Attribute.String & Attribute.Required;
+    About_The_Place: Attribute.Text & Attribute.Required;
+    Place_Image: Attribute.Media<'images'> & Attribute.Required;
+    Url_To_Know_More: Attribute.Text & Attribute.DefaultTo<'#'>;
+  };
+}
+
+export interface ElementTpc extends Schema.Component {
+  collectionName: 'components_element_tpcs';
+  info: {
+    displayName: 'TPC';
+  };
+  attributes: {
+    Name: Attribute.String & Attribute.Required;
+    Affiliation: Attribute.Text & Attribute.Required;
+    Profile_Link: Attribute.Text & Attribute.DefaultTo<'#'>;
+  };
+}
+
 export interface ElementTrackDetails extends Schema.Component {
   collectionName: 'components_element_track_details';
   info: {
@@ -98,9 +146,13 @@ declare module '@strapi/types' {
       'element.about-conference': ElementAboutConference;
       'element.distinguished-speaker': ElementDistinguishedSpeaker;
       'element.event-sponsor': ElementEventSponsor;
+      'element.gallary-card': ElementGallaryCard;
       'element.hero-section': ElementHeroSection;
+      'element.image-slider': ElementImageSlider;
       'element.important-dates': ElementImportantDates;
       'element.latest-news': ElementLatestNews;
+      'element.places-to-visit': ElementPlacesToVisit;
+      'element.tpc': ElementTpc;
       'element.track-details': ElementTrackDetails;
     }
   }

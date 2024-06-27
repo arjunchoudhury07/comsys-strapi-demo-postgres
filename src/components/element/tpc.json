@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_element_tpcs",
+  "info": {
+    "displayName": "TPC"
+  },
+  "options": {},
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "required": true
+    },
+    "Affiliation": {
+      "type": "text",
+      "required": true
+    },
+    "Profile_Link": {
+      "type": "text",
+      "required": false,
+      "default": "#"
+    }
+  }
+}

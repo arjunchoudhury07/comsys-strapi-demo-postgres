@@ -41,6 +41,22 @@
       "type": "component",
       "repeatable": true,
       "component": "element.event-sponsor"
+    },
+    "Slider": {
+      "type": "component",
+      "repeatable": true,
+      "component": "element.image-slider",
+      "required": true
+    },
+    "Notice": {
+      "type": "component",
+      "repeatable": true,
+      "component": "element.latest-news"
+    },
+    "Conference_Year": {
+      "type": "integer",
+      "required": true,
+      "default": 2024
     }
   }
 }

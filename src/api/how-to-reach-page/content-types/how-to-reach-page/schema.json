@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "how_to_reach_pages",
+  "info": {
+    "singularName": "how-to-reach-page",
+    "pluralName": "how-to-reach-pages",
+    "displayName": "Places_To_Visit_Page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Conference_Year": {
+      "type": "integer",
+      "default": 2024,
+      "required": true
+    },
+    "Visiting_Place": {
+      "type": "component",
+      "repeatable": true,
+      "component": "element.places-to-visit",
+      "required": true
+    }
+  }
+}
