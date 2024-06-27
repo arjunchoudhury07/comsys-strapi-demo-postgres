@@ -4,7 +4,8 @@
   "info": {
     "singularName": "call-for-paper-page",
     "pluralName": "call-for-paper-pages",
-    "displayName": "Call_For_Paper_Page"
+    "displayName": "Call_For_Paper_Page",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -32,12 +33,12 @@
       "type": "text"
     },
     "CFP_File": {
-      "allowedTypes": [
-        "files"
-      ],
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "files"
+      ]
     },
     "Conference_Year": {
       "type": "integer",
