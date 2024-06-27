@@ -1,0 +1,48 @@
+{
+  "kind": "collectionType",
+  "collectionName": "call_for_paper_pages",
+  "info": {
+    "singularName": "call-for-paper-page",
+    "pluralName": "call-for-paper-pages",
+    "displayName": "Call_For_Paper_Page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "About_CFP": {
+      "type": "text",
+      "required": true
+    },
+    "Proceedings": {
+      "type": "text",
+      "required": true
+    },
+    "Submission_Procedure": {
+      "type": "text",
+      "required": true
+    },
+    "Important_Dates": {
+      "type": "component",
+      "repeatable": false,
+      "component": "element.important-dates"
+    },
+    "Further_Details": {
+      "type": "text"
+    },
+    "CFP_File": {
+      "allowedTypes": [
+        "files"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "Conference_Year": {
+      "type": "integer",
+      "required": true,
+      "default": 2024
+    }
+  }
+}
