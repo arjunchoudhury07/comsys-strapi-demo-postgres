@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "galleries",
+  "info": {
+    "singularName": "gallery",
+    "pluralName": "galleries",
+    "displayName": "Gallery_Page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Gallery_Card": {
+      "type": "component",
+      "repeatable": true,
+      "component": "element.gallary-card"
+    },
+    "Conference_Year": {
+      "type": "integer",
+      "default": 2024,
+      "required": true
+    }
+  }
+}

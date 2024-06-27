@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "about_uses",
+  "info": {
+    "singularName": "about-us",
+    "pluralName": "about-uses",
+    "displayName": "About_Us_Page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "About_Us": {
+      "type": "component",
+      "repeatable": true,
+      "component": "element.about-conference"
+    },
+    "Conference_Year": {
+      "type": "integer",
+      "default": 2024,
+      "required": true
+    }
+  }
+}
