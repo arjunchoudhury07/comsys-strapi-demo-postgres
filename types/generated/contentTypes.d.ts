@@ -822,6 +822,79 @@ export interface ApiAboutUsAboutUs extends Schema.CollectionType {
   };
 }
 
+export interface ApiAcceptedPaperPageAcceptedPaperPage
+  extends Schema.CollectionType {
+  collectionName: 'accepted_paper_pages';
+  info: {
+    singularName: 'accepted-paper-page';
+    pluralName: 'accepted-paper-pages';
+    displayName: 'Accepted_Paper_Page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Accepted_Paper: Attribute.Component<'element.accepted-paper', true>;
+    Conference_Year: Attribute.Integer &
+      Attribute.Required &
+      Attribute.DefaultTo<2024>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::accepted-paper-page.accepted-paper-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::accepted-paper-page.accepted-paper-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiCallForPaperPageCallForPaperPage
+  extends Schema.CollectionType {
+  collectionName: 'call_for_paper_pages';
+  info: {
+    singularName: 'call-for-paper-page';
+    pluralName: 'call-for-paper-pages';
+    displayName: 'Call_For_Paper_Page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    About_CFP: Attribute.Text & Attribute.Required;
+    Proceedings: Attribute.Text & Attribute.Required;
+    Submission_Procedure: Attribute.Text & Attribute.Required;
+    Important_Dates: Attribute.Component<'element.important-dates'>;
+    Further_Details: Attribute.Text;
+    CFP_File: Attribute.Media<'files'> & Attribute.Required;
+    Conference_Year: Attribute.Integer &
+      Attribute.Required &
+      Attribute.DefaultTo<2024>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::call-for-paper-page.call-for-paper-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::call-for-paper-page.call-for-paper-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiCommitteeCommittee extends Schema.CollectionType {
   collectionName: 'committees';
   info: {
@@ -1072,6 +1145,8 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
       'api::about-us.about-us': ApiAboutUsAboutUs;
+      'api::accepted-paper-page.accepted-paper-page': ApiAcceptedPaperPageAcceptedPaperPage;
+      'api::call-for-paper-page.call-for-paper-page': ApiCallForPaperPageCallForPaperPage;
       'api::committee.committee': ApiCommitteeCommittee;
       'api::gallery.gallery': ApiGalleryGallery;
       'api::home-page.home-page': ApiHomePageHomePage;

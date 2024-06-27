@@ -12,6 +12,17 @@ export interface ElementAboutConference extends Schema.Component {
   };
 }
 
+export interface ElementAcceptedPaper extends Schema.Component {
+  collectionName: 'components_element_accepted_papers';
+  info: {
+    displayName: 'Accepted_Paper';
+  };
+  attributes: {
+    Paper_ID: Attribute.Integer & Attribute.Required;
+    Paper_Title: Attribute.String & Attribute.Required;
+  };
+}
+
 export interface ElementDistinguishedSpeaker extends Schema.Component {
   collectionName: 'components_element_distinguished_speakers';
   info: {
@@ -144,6 +155,7 @@ declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'element.about-conference': ElementAboutConference;
+      'element.accepted-paper': ElementAcceptedPaper;
       'element.distinguished-speaker': ElementDistinguishedSpeaker;
       'element.event-sponsor': ElementEventSponsor;
       'element.gallary-card': ElementGallaryCard;
