@@ -998,8 +998,7 @@ export interface ApiHomePageHomePage extends Schema.CollectionType {
     >;
     importantDates: Attribute.Component<'element.important-dates', true>;
     EventSponsor: Attribute.Component<'element.event-sponsor', true>;
-    Slider: Attribute.Component<'element.image-slider', true> &
-      Attribute.Required;
+    Slider: Attribute.Component<'element.image-slider', true>;
     Notice: Attribute.Component<'element.latest-news', true>;
     Conference_Year: Attribute.Integer &
       Attribute.Required &
