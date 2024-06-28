@@ -56,7 +56,7 @@ export interface ElementGallaryCard extends Schema.Component {
   };
   attributes: {
     Title: Attribute.String & Attribute.Required;
-    Thumbnail_Image: Attribute.Media<'images'> & Attribute.Required;
+    Thumbnail_Image: Attribute.Media<'images'>;
     Image_Url: Attribute.Text & Attribute.Required;
   };
 }
@@ -118,11 +118,12 @@ export interface ElementPlacesToVisit extends Schema.Component {
   collectionName: 'components_element_places_to_visits';
   info: {
     displayName: 'Places_To_Visit';
+    description: '';
   };
   attributes: {
     Place_Name: Attribute.String & Attribute.Required;
     About_The_Place: Attribute.Text & Attribute.Required;
-    Place_Image: Attribute.Media<'images'> & Attribute.Required;
+    Place_Image: Attribute.Media<'images'>;
     Url_To_Know_More: Attribute.Text & Attribute.DefaultTo<'#'>;
   };
 }

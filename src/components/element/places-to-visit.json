@@ -1,7 +1,8 @@
 {
   "collectionName": "components_element_places_to_visits",
   "info": {
-    "displayName": "Places_To_Visit"
+    "displayName": "Places_To_Visit",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -14,12 +15,12 @@
       "required": true
     },
     "Place_Image": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
     },
     "Url_To_Know_More": {
       "type": "text",
