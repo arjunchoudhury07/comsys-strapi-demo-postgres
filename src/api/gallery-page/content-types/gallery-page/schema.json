@@ -1,9 +1,9 @@
 {
   "kind": "collectionType",
-  "collectionName": "galleries",
+  "collectionName": "gallery_pages",
   "info": {
-    "singularName": "gallery",
-    "pluralName": "galleries",
+    "singularName": "gallery-page",
+    "pluralName": "gallery-pages",
     "displayName": "Gallery_Page",
     "description": ""
   },
@@ -12,15 +12,15 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "Gallery_Card": {
+    "Gallery": {
       "type": "component",
       "repeatable": true,
       "component": "element.gallary-card"
     },
     "Conference_Year": {
       "type": "integer",
-      "default": 2024,
-      "required": true
+      "required": true,
+      "default": 2024
     }
   }
 }

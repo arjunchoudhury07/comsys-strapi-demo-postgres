@@ -863,6 +863,7 @@ export interface ApiCallForPaperPageCallForPaperPage
     singularName: 'call-for-paper-page';
     pluralName: 'call-for-paper-pages';
     displayName: 'Call_For_Paper_Page';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -943,11 +944,11 @@ export interface ApiCommitteeCommittee extends Schema.CollectionType {
   };
 }
 
-export interface ApiGalleryGallery extends Schema.CollectionType {
-  collectionName: 'galleries';
+export interface ApiGalleryPageGalleryPage extends Schema.CollectionType {
+  collectionName: 'gallery_pages';
   info: {
-    singularName: 'gallery';
-    pluralName: 'galleries';
+    singularName: 'gallery-page';
+    pluralName: 'gallery-pages';
     displayName: 'Gallery_Page';
     description: '';
   };
@@ -955,7 +956,7 @@ export interface ApiGalleryGallery extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    Gallery_Card: Attribute.Component<'element.gallary-card', true>;
+    Gallery: Attribute.Component<'element.gallary-card', true>;
     Conference_Year: Attribute.Integer &
       Attribute.Required &
       Attribute.DefaultTo<2024>;
@@ -963,13 +964,13 @@ export interface ApiGalleryGallery extends Schema.CollectionType {
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::gallery.gallery',
+      'api::gallery-page.gallery-page',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::gallery.gallery',
+      'api::gallery-page.gallery-page',
       'oneToOne',
       'admin::user'
     > &
@@ -1021,41 +1022,6 @@ export interface ApiHomePageHomePage extends Schema.CollectionType {
   };
 }
 
-export interface ApiHowToReachPageHowToReachPage extends Schema.CollectionType {
-  collectionName: 'how_to_reach_pages';
-  info: {
-    singularName: 'how-to-reach-page';
-    pluralName: 'how-to-reach-pages';
-    displayName: 'Places_To_Visit_Page';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    Conference_Year: Attribute.Integer &
-      Attribute.Required &
-      Attribute.DefaultTo<2024>;
-    Visiting_Place: Attribute.Component<'element.places-to-visit', true> &
-      Attribute.Required;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::how-to-reach-page.how-to-reach-page',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::how-to-reach-page.how-to-reach-page',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface ApiImportantDatePageImportantDatePage
   extends Schema.CollectionType {
   collectionName: 'important_date_pages';
@@ -1084,6 +1050,41 @@ export interface ApiImportantDatePageImportantDatePage
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::important-date-page.important-date-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiPlacesToVisitPagePlacesToVisitPage
+  extends Schema.CollectionType {
+  collectionName: 'places_to_visit_pages';
+  info: {
+    singularName: 'places-to-visit-page';
+    pluralName: 'places-to-visit-pages';
+    displayName: 'Places_To_Visit_Page';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Places_To_Visit: Attribute.Component<'element.places-to-visit', true>;
+    Conference_Year: Attribute.Integer &
+      Attribute.Required &
+      Attribute.DefaultTo<2024>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::places-to-visit-page.places-to-visit-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::places-to-visit-page.places-to-visit-page',
       'oneToOne',
       'admin::user'
     > &
@@ -1147,10 +1148,10 @@ declare module '@strapi/types' {
       'api::accepted-paper-page.accepted-paper-page': ApiAcceptedPaperPageAcceptedPaperPage;
       'api::call-for-paper-page.call-for-paper-page': ApiCallForPaperPageCallForPaperPage;
       'api::committee.committee': ApiCommitteeCommittee;
-      'api::gallery.gallery': ApiGalleryGallery;
+      'api::gallery-page.gallery-page': ApiGalleryPageGalleryPage;
       'api::home-page.home-page': ApiHomePageHomePage;
-      'api::how-to-reach-page.how-to-reach-page': ApiHowToReachPageHowToReachPage;
       'api::important-date-page.important-date-page': ApiImportantDatePageImportantDatePage;
+      'api::places-to-visit-page.places-to-visit-page': ApiPlacesToVisitPagePlacesToVisitPage;
       'api::technical-program-committee.technical-program-committee': ApiTechnicalProgramCommitteeTechnicalProgramCommittee;
     }
   }
