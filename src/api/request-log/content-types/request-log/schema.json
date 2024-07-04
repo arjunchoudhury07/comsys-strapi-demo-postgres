@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "request_logs",
+  "info": {
+    "singularName": "request-log",
+    "pluralName": "request-logs",
+    "displayName": "Request_Log"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "Method": {
+      "type": "string"
+    },
+    "URL": {
+      "type": "text"
+    },
+    "Timestamp": {
+      "type": "datetime"
+    },
+    "IP_Address": {
+      "type": "string"
+    },
+    "Body": {
+      "type": "json"
+    }
+  }
+}
