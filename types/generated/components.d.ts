@@ -26,13 +26,14 @@ export interface ElementDistinguishedSpeaker extends Schema.Component {
   collectionName: 'components_element_distinguished_speakers';
   info: {
     displayName: 'DistinguishedSpeaker';
+    description: '';
   };
   attributes: {
     name: Attribute.String & Attribute.Required;
     designation: Attribute.Text;
     affiliation: Attribute.Text;
     profileLink: Attribute.Text;
-    photo: Attribute.Media<'images'> & Attribute.Required;
+    photo: Attribute.Media<'images'>;
   };
 }
 
@@ -40,10 +41,11 @@ export interface ElementEventSponsor extends Schema.Component {
   collectionName: 'components_element_event_sponsors';
   info: {
     displayName: 'eventSponsor';
+    description: '';
   };
   attributes: {
     sponsorName: Attribute.String & Attribute.Required;
-    sponsorLogo: Attribute.Media<'images'> & Attribute.Required;
+    sponsorLogo: Attribute.Media<'images'>;
   };
 }
 
@@ -64,9 +66,10 @@ export interface ElementHeroSection extends Schema.Component {
   collectionName: 'components_element_hero_sections';
   info: {
     displayName: 'heroSection';
+    description: '';
   };
   attributes: {
-    organizingInstituteLogo: Attribute.Media<'images'> & Attribute.Required;
+    organizingInstituteLogo: Attribute.Media<'images'>;
     howMuchConducted: Attribute.String & Attribute.Required;
     presentYear: Attribute.String & Attribute.Required;
     mainSessionDate: Attribute.String & Attribute.Required;

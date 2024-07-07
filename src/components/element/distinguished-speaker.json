@@ -1,7 +1,8 @@
 {
   "collectionName": "components_element_distinguished_speakers",
   "info": {
-    "displayName": "DistinguishedSpeaker"
+    "displayName": "DistinguishedSpeaker",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -19,12 +20,12 @@
       "type": "text"
     },
     "photo": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
     }
   }
 }

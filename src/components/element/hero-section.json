@@ -1,17 +1,18 @@
 {
   "collectionName": "components_element_hero_sections",
   "info": {
-    "displayName": "heroSection"
+    "displayName": "heroSection",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "organizingInstituteLogo": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
     },
     "howMuchConducted": {
       "type": "string",
