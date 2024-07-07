@@ -590,6 +590,53 @@ export interface PluginContentReleasesReleaseAction
   };
 }
 
+export interface PluginI18NLocale extends Schema.CollectionType {
+  collectionName: 'i18n_locale';
+  info: {
+    singularName: 'locale';
+    pluralName: 'locales';
+    collectionName: 'locales';
+    displayName: 'Locale';
+    description: '';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    'content-manager': {
+      visible: false;
+    };
+    'content-type-builder': {
+      visible: false;
+    };
+  };
+  attributes: {
+    name: Attribute.String &
+      Attribute.SetMinMax<
+        {
+          min: 1;
+          max: 50;
+        },
+        number
+      >;
+    code: Attribute.String & Attribute.Unique;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'plugin::i18n.locale',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'plugin::i18n.locale',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface PluginUsersPermissionsPermission
   extends Schema.CollectionType {
   collectionName: 'up_permissions';
@@ -741,58 +788,11 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
-export interface PluginI18NLocale extends Schema.CollectionType {
-  collectionName: 'i18n_locale';
+export interface ApiAboutUsPageAboutUsPage extends Schema.CollectionType {
+  collectionName: 'about_us_pages';
   info: {
-    singularName: 'locale';
-    pluralName: 'locales';
-    collectionName: 'locales';
-    displayName: 'Locale';
-    description: '';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  pluginOptions: {
-    'content-manager': {
-      visible: false;
-    };
-    'content-type-builder': {
-      visible: false;
-    };
-  };
-  attributes: {
-    name: Attribute.String &
-      Attribute.SetMinMax<
-        {
-          min: 1;
-          max: 50;
-        },
-        number
-      >;
-    code: Attribute.String & Attribute.Unique;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'plugin::i18n.locale',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'plugin::i18n.locale',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiAboutUsAboutUs extends Schema.CollectionType {
-  collectionName: 'about_uses';
-  info: {
-    singularName: 'about-us';
-    pluralName: 'about-uses';
+    singularName: 'about-us-page';
+    pluralName: 'about-us-pages';
     displayName: 'About_Us_Page';
     description: '';
   };
@@ -800,7 +800,7 @@ export interface ApiAboutUsAboutUs extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    About_Us: Attribute.Component<'element.about-conference', true>;
+    About_Us: Attribute.Component<'element.about-conference'>;
     Conference_Year: Attribute.Integer &
       Attribute.Required &
       Attribute.DefaultTo<2024>;
@@ -808,13 +808,13 @@ export interface ApiAboutUsAboutUs extends Schema.CollectionType {
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::about-us.about-us',
+      'api::about-us-page.about-us-page',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::about-us.about-us',
+      'api::about-us-page.about-us-page',
       'oneToOne',
       'admin::user'
     > &
@@ -1023,6 +1023,42 @@ export interface ApiHomePageHomePage extends Schema.CollectionType {
   };
 }
 
+export interface ApiHowToReachPageHowToReachPage extends Schema.CollectionType {
+  collectionName: 'how_to_reach_pages';
+  info: {
+    singularName: 'how-to-reach-page';
+    pluralName: 'how-to-reach-pages';
+    displayName: 'How_To_Reach_Page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    By_Air: Attribute.Text;
+    By_Train: Attribute.Text;
+    By_Road: Attribute.Text;
+    Google_Map_Iframe: Attribute.Text;
+    Conference_Year: Attribute.Integer &
+      Attribute.Required &
+      Attribute.DefaultTo<2024>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::how-to-reach-page.how-to-reach-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::how-to-reach-page.how-to-reach-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiImportantDatePageImportantDatePage
   extends Schema.CollectionType {
   collectionName: 'important_date_pages';
@@ -1141,16 +1177,17 @@ declare module '@strapi/types' {
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
+      'plugin::i18n.locale': PluginI18NLocale;
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
-      'plugin::i18n.locale': PluginI18NLocale;
-      'api::about-us.about-us': ApiAboutUsAboutUs;
+      'api::about-us-page.about-us-page': ApiAboutUsPageAboutUsPage;
       'api::accepted-paper-page.accepted-paper-page': ApiAcceptedPaperPageAcceptedPaperPage;
       'api::call-for-paper-page.call-for-paper-page': ApiCallForPaperPageCallForPaperPage;
       'api::committee.committee': ApiCommitteeCommittee;
       'api::gallery-page.gallery-page': ApiGalleryPageGalleryPage;
       'api::home-page.home-page': ApiHomePageHomePage;
+      'api::how-to-reach-page.how-to-reach-page': ApiHowToReachPageHowToReachPage;
       'api::important-date-page.important-date-page': ApiImportantDatePageImportantDatePage;
       'api::places-to-visit-page.places-to-visit-page': ApiPlacesToVisitPagePlacesToVisitPage;
       'api::technical-program-committee.technical-program-committee': ApiTechnicalProgramCommitteeTechnicalProgramCommittee;

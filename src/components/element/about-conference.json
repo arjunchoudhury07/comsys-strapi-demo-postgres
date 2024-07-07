@@ -1,20 +1,14 @@
 {
   "collectionName": "components_element_about_conferences",
   "info": {
-    "displayName": "AboutConference"
+    "displayName": "AboutConference",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "aboutTheConference": {
       "type": "text",
       "required": true
-    },
-    "presidentName": {
-      "type": "string",
-      "required": true
-    },
-    "emailOfPresident": {
-      "type": "email"
     }
   }
 }

@@ -4,11 +4,10 @@ export interface ElementAboutConference extends Schema.Component {
   collectionName: 'components_element_about_conferences';
   info: {
     displayName: 'AboutConference';
+    description: '';
   };
   attributes: {
     aboutTheConference: Attribute.Text & Attribute.Required;
-    presidentName: Attribute.String & Attribute.Required;
-    emailOfPresident: Attribute.Email;
   };
 }
 
