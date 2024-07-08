@@ -22,6 +22,26 @@ export interface ElementAcceptedPaper extends Schema.Component {
   };
 }
 
+export interface ElementCallForAdvertisement extends Schema.Component {
+  collectionName: 'components_element_call_for_advertisements';
+  info: {
+    displayName: 'Call_For_Advertisement';
+  };
+  attributes: {
+    Document: Attribute.Media<'images' | 'files', true>;
+  };
+}
+
+export interface ElementCallForSponsorship extends Schema.Component {
+  collectionName: 'components_element_call_for_sponsorships';
+  info: {
+    displayName: ' Call_For_Sponsorship';
+  };
+  attributes: {
+    Document: Attribute.Media<'images' | 'files', true>;
+  };
+}
+
 export interface ElementDistinguishedSpeaker extends Schema.Component {
   collectionName: 'components_element_distinguished_speakers';
   info: {
@@ -103,6 +123,17 @@ export interface ElementImportantDates extends Schema.Component {
   };
 }
 
+export interface ElementIndexedBy extends Schema.Component {
+  collectionName: 'components_element_indexed_bies';
+  info: {
+    displayName: 'Indexed_By';
+  };
+  attributes: {
+    Logo: Attribute.Media<'images'>;
+    Title: Attribute.String;
+  };
+}
+
 export interface ElementLatestNews extends Schema.Component {
   collectionName: 'components_element_latest_news';
   info: {
@@ -127,6 +158,19 @@ export interface ElementPlacesToVisit extends Schema.Component {
     About_The_Place: Attribute.Text & Attribute.Required;
     Place_Image: Attribute.Media<'images'>;
     Url_To_Know_More: Attribute.Text & Attribute.DefaultTo<'#'>;
+  };
+}
+
+export interface ElementPublication extends Schema.Component {
+  collectionName: 'components_element_publications';
+  info: {
+    displayName: 'Publication';
+  };
+  attributes: {
+    Book_Description: Attribute.Text;
+    Book_Image: Attribute.Media<'images', true>;
+    Index_Description: Attribute.Text;
+    Publisher_Image: Attribute.Media<'images'>;
   };
 }
 
@@ -159,14 +203,18 @@ declare module '@strapi/types' {
     export interface Components {
       'element.about-conference': ElementAboutConference;
       'element.accepted-paper': ElementAcceptedPaper;
+      'element.call-for-advertisement': ElementCallForAdvertisement;
+      'element.call-for-sponsorship': ElementCallForSponsorship;
       'element.distinguished-speaker': ElementDistinguishedSpeaker;
       'element.event-sponsor': ElementEventSponsor;
       'element.gallary-card': ElementGallaryCard;
       'element.hero-section': ElementHeroSection;
       'element.image-slider': ElementImageSlider;
       'element.important-dates': ElementImportantDates;
+      'element.indexed-by': ElementIndexedBy;
       'element.latest-news': ElementLatestNews;
       'element.places-to-visit': ElementPlacesToVisit;
+      'element.publication': ElementPublication;
       'element.tpc': ElementTpc;
       'element.track-details': ElementTrackDetails;
     }

@@ -856,6 +856,40 @@ export interface ApiAcceptedPaperPageAcceptedPaperPage
   };
 }
 
+export interface ApiCallForAdvertisementPageCallForAdvertisementPage
+  extends Schema.CollectionType {
+  collectionName: 'call_for_advertisement_pages';
+  info: {
+    singularName: 'call-for-advertisement-page';
+    pluralName: 'call-for-advertisement-pages';
+    displayName: ' Call_For_Advertisement_Page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Conference_Year: Attribute.Integer &
+      Attribute.Required &
+      Attribute.DefaultTo<2024>;
+    CFA: Attribute.Component<'element.call-for-advertisement'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::call-for-advertisement-page.call-for-advertisement-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::call-for-advertisement-page.call-for-advertisement-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiCallForPaperPageCallForPaperPage
   extends Schema.CollectionType {
   collectionName: 'call_for_paper_pages';
@@ -896,6 +930,40 @@ export interface ApiCallForPaperPageCallForPaperPage
   };
 }
 
+export interface ApiCallForSponsorshipPageCallForSponsorshipPage
+  extends Schema.CollectionType {
+  collectionName: 'call_for_sponsorship_pages';
+  info: {
+    singularName: 'call-for-sponsorship-page';
+    pluralName: 'call-for-sponsorship-pages';
+    displayName: 'Call_For_Sponsorship_Page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Conference_Year: Attribute.Integer &
+      Attribute.Required &
+      Attribute.DefaultTo<2024>;
+    CFS: Attribute.Component<'element.call-for-sponsorship'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::call-for-sponsorship-page.call-for-sponsorship-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::call-for-sponsorship-page.call-for-sponsorship-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiCommitteeCommittee extends Schema.CollectionType {
   collectionName: 'committees';
   info: {
@@ -917,13 +985,16 @@ export interface ApiCommitteeCommittee extends Schema.CollectionType {
     year: Attribute.Integer;
     subsection: Attribute.Enumeration<
       [
-        'chief patron',
-        'patrons',
-        'general chair',
-        'organizing chairs',
-        'program chairs',
-        'track chairs',
-        'publicity chairs'
+        'Chief Patron',
+        'Patrons',
+        'General Chair',
+        'Organizing Chairs',
+        'Program Chairs',
+        'Track Chairs',
+        'Publicity Chairs',
+        'Web Chairs',
+        'Industrial Chair',
+        'Finance Chairs'
       ]
     >;
     createdAt: Attribute.DateTime;
@@ -1128,6 +1199,42 @@ export interface ApiPlacesToVisitPagePlacesToVisitPage
   };
 }
 
+export interface ApiPublicationPagePublicationPage
+  extends Schema.CollectionType {
+  collectionName: 'publication_pages';
+  info: {
+    singularName: 'publication-page';
+    pluralName: 'publication-pages';
+    displayName: 'Publication_Page';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Indexed_By: Attribute.Component<'element.indexed-by', true>;
+    Conference_Year: Attribute.Integer &
+      Attribute.Required &
+      Attribute.DefaultTo<2024>;
+    About_Publication: Attribute.Component<'element.publication'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::publication-page.publication-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::publication-page.publication-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiTechnicalProgramCommitteeTechnicalProgramCommittee
   extends Schema.CollectionType {
   collectionName: 'technical_program_committees';
@@ -1182,13 +1289,16 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::about-us-page.about-us-page': ApiAboutUsPageAboutUsPage;
       'api::accepted-paper-page.accepted-paper-page': ApiAcceptedPaperPageAcceptedPaperPage;
+      'api::call-for-advertisement-page.call-for-advertisement-page': ApiCallForAdvertisementPageCallForAdvertisementPage;
       'api::call-for-paper-page.call-for-paper-page': ApiCallForPaperPageCallForPaperPage;
+      'api::call-for-sponsorship-page.call-for-sponsorship-page': ApiCallForSponsorshipPageCallForSponsorshipPage;
       'api::committee.committee': ApiCommitteeCommittee;
       'api::gallery-page.gallery-page': ApiGalleryPageGalleryPage;
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::how-to-reach-page.how-to-reach-page': ApiHowToReachPageHowToReachPage;
       'api::important-date-page.important-date-page': ApiImportantDatePageImportantDatePage;
       'api::places-to-visit-page.places-to-visit-page': ApiPlacesToVisitPagePlacesToVisitPage;
+      'api::publication-page.publication-page': ApiPublicationPagePublicationPage;
       'api::technical-program-committee.technical-program-committee': ApiTechnicalProgramCommitteeTechnicalProgramCommittee;
     }
   }

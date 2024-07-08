@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_element_call_for_advertisements",
+  "info": {
+    "displayName": "Call_For_Advertisement"
+  },
+  "options": {},
+  "attributes": {
+    "Document": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}

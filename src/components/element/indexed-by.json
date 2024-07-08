@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_element_indexed_bies",
+  "info": {
+    "displayName": "Indexed_By"
+  },
+  "options": {},
+  "attributes": {
+    "Logo": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "Title": {
+      "type": "string"
+    }
+  }
+}
