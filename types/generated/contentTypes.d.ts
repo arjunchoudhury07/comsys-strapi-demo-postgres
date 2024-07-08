@@ -985,13 +985,16 @@ export interface ApiCommitteeCommittee extends Schema.CollectionType {
     year: Attribute.Integer;
     subsection: Attribute.Enumeration<
       [
-        'chief patron',
-        'patrons',
-        'general chair',
-        'organizing chairs',
-        'program chairs',
-        'track chairs',
-        'publicity chairs'
+        'Chief Patron',
+        'Patrons',
+        'General Chair',
+        'Organizing Chairs',
+        'Program Chairs',
+        'Track Chairs',
+        'Publicity Chairs',
+        'Web Chairs',
+        'Industrial Chair',
+        'Finance Chairs'
       ]
     >;
     createdAt: Attribute.DateTime;
