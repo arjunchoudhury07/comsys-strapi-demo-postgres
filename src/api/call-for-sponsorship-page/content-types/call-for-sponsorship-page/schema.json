@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "call_for_sponsorship_pages",
+  "info": {
+    "singularName": "call-for-sponsorship-page",
+    "pluralName": "call-for-sponsorship-pages",
+    "displayName": "Call_For_Sponsorship_Page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Conference_Year": {
+      "type": "integer",
+      "default": 2024,
+      "required": true
+    },
+    "CFS": {
+      "type": "component",
+      "repeatable": false,
+      "component": "element.call-for-sponsorship"
+    }
+  }
+}
