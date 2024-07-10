@@ -992,9 +992,11 @@ export interface ApiCommitteeCommittee extends Schema.CollectionType {
         'Program Chairs',
         'Track Chairs',
         'Publicity Chairs',
+        'Publication Chairs',
         'Web Chairs',
         'Industrial Chair',
-        'Finance Chairs'
+        'Finance Chairs',
+        'International Advisory Committee'
       ]
     >;
     createdAt: Attribute.DateTime;
