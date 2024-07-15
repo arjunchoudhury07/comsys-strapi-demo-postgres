@@ -1,0 +1,13 @@
+name: Keep Render Instance Awake
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'  # This runs the action every 5 minutes
+
+jobs:
+  keep-alive:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Send keep-alive request
+        run: curl -X GET https://your-instance-url.com > /dev/null 2>&1
