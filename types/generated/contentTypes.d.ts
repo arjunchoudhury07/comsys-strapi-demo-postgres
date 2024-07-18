@@ -999,6 +999,7 @@ export interface ApiCommitteeCommittee extends Schema.CollectionType {
         'International Advisory Committee'
       ]
     >;
+    Profile_Photo_URL: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

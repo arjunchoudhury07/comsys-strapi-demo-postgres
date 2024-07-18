@@ -158,6 +158,7 @@ export interface ElementPlacesToVisit extends Schema.Component {
     About_The_Place: Attribute.Text & Attribute.Required;
     Place_Image: Attribute.Media<'images'>;
     Url_To_Know_More: Attribute.Text & Attribute.DefaultTo<'#'>;
+    Place_Image_URL: Attribute.Text;
   };
 }
 
