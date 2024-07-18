@@ -26,6 +26,9 @@
       "type": "text",
       "default": "#",
       "required": false
+    },
+    "Place_Image_URL": {
+      "type": "text"
     }
   }
 }

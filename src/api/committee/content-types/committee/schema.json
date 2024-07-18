@@ -57,6 +57,9 @@
         "Finance Chairs",
         "International Advisory Committee"
       ]
+    },
+    "Profile_Photo_URL": {
+      "type": "text"
     }
   }
 }

@@ -1,5 +1,4 @@
 import logo from "./extensions/comsysLogo.png";
-import menuLogo from "./extensions/headLogo.png";
 export default {
   config: {
     auth: {
@@ -11,7 +10,7 @@ export default {
     },
     // Replace the Strapi logo in the main navigation
     menu: {
-      menuLogo,
+      logo,
     },
     translations: {
       en: {
