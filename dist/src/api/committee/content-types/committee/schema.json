@@ -1,0 +1,65 @@
+{
+    "kind": "collectionType",
+    "collectionName": "committees",
+    "info": {
+        "singularName": "committee",
+        "pluralName": "committees",
+        "displayName": "committee",
+        "description": ""
+    },
+    "options": {
+        "draftAndPublish": true
+    },
+    "pluginOptions": {},
+    "attributes": {
+        "name": {
+            "type": "string"
+        },
+        "designation": {
+            "type": "string"
+        },
+        "university": {
+            "type": "string"
+        },
+        "linkedIn_profile": {
+            "type": "string"
+        },
+        "Profile_link": {
+            "type": "string"
+        },
+        "profile_picture": {
+            "type": "media",
+            "multiple": false,
+            "required": false,
+            "allowedTypes": [
+                "images",
+                "files",
+                "videos",
+                "audios"
+            ]
+        },
+        "year": {
+            "type": "integer"
+        },
+        "subsection": {
+            "type": "enumeration",
+            "enum": [
+                "Chief Patron",
+                "Patrons",
+                "General Chair",
+                "Organizing Chairs",
+                "Program Chairs",
+                "Track Chairs",
+                "Publicity Chairs",
+                "Publication Chairs",
+                "Web Chairs",
+                "Industrial Chair",
+                "Finance Chairs",
+                "International Advisory Committee"
+            ]
+        },
+        "Profile_Photo_URL": {
+            "type": "text"
+        }
+    }
+}

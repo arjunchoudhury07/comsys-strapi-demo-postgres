@@ -1,0 +1,26 @@
+{
+    "collectionName": "components_element_gallary_cards",
+    "info": {
+        "displayName": "Gallary_Card",
+        "description": ""
+    },
+    "options": {},
+    "attributes": {
+        "Title": {
+            "type": "string",
+            "required": true
+        },
+        "Thumbnail_Image": {
+            "type": "media",
+            "multiple": false,
+            "required": false,
+            "allowedTypes": [
+                "images"
+            ]
+        },
+        "Image_Url": {
+            "type": "text",
+            "required": true
+        }
+    }
+}

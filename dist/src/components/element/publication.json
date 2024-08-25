@@ -1,0 +1,29 @@
+{
+    "collectionName": "components_element_publications",
+    "info": {
+        "displayName": "Publication"
+    },
+    "options": {},
+    "attributes": {
+        "Book_Description": {
+            "type": "text"
+        },
+        "Book_Image": {
+            "allowedTypes": [
+                "images"
+            ],
+            "type": "media",
+            "multiple": true
+        },
+        "Index_Description": {
+            "type": "text"
+        },
+        "Publisher_Image": {
+            "allowedTypes": [
+                "images"
+            ],
+            "type": "media",
+            "multiple": false
+        }
+    }
+}

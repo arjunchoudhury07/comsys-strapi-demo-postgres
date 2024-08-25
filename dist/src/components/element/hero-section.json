@@ -1,0 +1,38 @@
+{
+    "collectionName": "components_element_hero_sections",
+    "info": {
+        "displayName": "heroSection",
+        "description": ""
+    },
+    "options": {},
+    "attributes": {
+        "organizingInstituteLogo": {
+            "type": "media",
+            "multiple": false,
+            "required": false,
+            "allowedTypes": [
+                "images"
+            ]
+        },
+        "howMuchConducted": {
+            "type": "string",
+            "required": true
+        },
+        "presentYear": {
+            "type": "string",
+            "required": true
+        },
+        "mainSessionDate": {
+            "type": "string",
+            "required": true
+        },
+        "venue": {
+            "type": "text",
+            "required": true
+        },
+        "organizedBy": {
+            "type": "text",
+            "required": true
+        }
+    }
+}

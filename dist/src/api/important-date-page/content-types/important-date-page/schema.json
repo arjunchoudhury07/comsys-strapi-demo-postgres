@@ -1,0 +1,26 @@
+{
+    "kind": "collectionType",
+    "collectionName": "important_date_pages",
+    "info": {
+        "singularName": "important-date-page",
+        "pluralName": "important-date-pages",
+        "displayName": "Important_Date_Page"
+    },
+    "options": {
+        "draftAndPublish": true
+    },
+    "pluginOptions": {},
+    "attributes": {
+        "Important_Date": {
+            "type": "component",
+            "repeatable": true,
+            "component": "element.important-dates",
+            "required": true
+        },
+        "Conference_Year": {
+            "type": "integer",
+            "required": true,
+            "default": 2024
+        }
+    }
+}

@@ -1,0 +1,17 @@
+{
+    "collectionName": "components_element_call_for_sponsorships",
+    "info": {
+        "displayName": " Call_For_Sponsorship"
+    },
+    "options": {},
+    "attributes": {
+        "Document": {
+            "allowedTypes": [
+                "images",
+                "files"
+            ],
+            "type": "media",
+            "multiple": true
+        }
+    }
+}

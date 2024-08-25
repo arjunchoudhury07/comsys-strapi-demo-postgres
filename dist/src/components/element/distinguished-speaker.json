@@ -1,0 +1,31 @@
+{
+    "collectionName": "components_element_distinguished_speakers",
+    "info": {
+        "displayName": "DistinguishedSpeaker",
+        "description": ""
+    },
+    "options": {},
+    "attributes": {
+        "name": {
+            "type": "string",
+            "required": true
+        },
+        "designation": {
+            "type": "text"
+        },
+        "affiliation": {
+            "type": "text"
+        },
+        "profileLink": {
+            "type": "text"
+        },
+        "photo": {
+            "type": "media",
+            "multiple": false,
+            "required": false,
+            "allowedTypes": [
+                "images"
+            ]
+        }
+    }
+}

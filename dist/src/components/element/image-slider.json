@@ -1,0 +1,16 @@
+{
+    "collectionName": "components_element_image_sliders",
+    "info": {
+        "displayName": "Image_Slider"
+    },
+    "options": {},
+    "attributes": {
+        "Image": {
+            "allowedTypes": [
+                "images"
+            ],
+            "type": "media",
+            "multiple": false
+        }
+    }
+}
