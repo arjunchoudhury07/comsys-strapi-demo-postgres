@@ -829,15 +829,15 @@ export interface ApiAcceptedPaperPageAcceptedPaperPage
     singularName: 'accepted-paper-page';
     pluralName: 'accepted-paper-pages';
     displayName: 'Accepted_Paper_Page';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    Accepted_Paper: Attribute.Component<'element.accepted-paper', true>;
-    Conference_Year: Attribute.Integer &
-      Attribute.Required &
-      Attribute.DefaultTo<2024>;
+    Paper_ID: Attribute.Integer;
+    Paper_Title: Attribute.String;
+    Conference_Year: Attribute.Integer;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1245,15 +1245,16 @@ export interface ApiTechnicalProgramCommitteeTechnicalProgramCommittee
     singularName: 'technical-program-committee';
     pluralName: 'technical-program-committees';
     displayName: 'Technical_Program_Committee';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    TPC: Attribute.Component<'element.tpc', true>;
-    Conference_Year: Attribute.Integer &
-      Attribute.Required &
-      Attribute.DefaultTo<2024>;
+    Name: Attribute.String & Attribute.Required;
+    Affiliation: Attribute.String;
+    Profile_Link: Attribute.Text;
+    Conference_Year: Attribute.Integer & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
