@@ -1238,6 +1238,40 @@ export interface ApiPublicationPagePublicationPage
   };
 }
 
+export interface ApiRequestLoggerRequestLogger extends Schema.CollectionType {
+  collectionName: 'request_loggers';
+  info: {
+    singularName: 'request-logger';
+    pluralName: 'request-loggers';
+    displayName: 'Request_Logger';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    User: Attribute.String;
+    URL: Attribute.String;
+    Timestamp: Attribute.DateTime;
+    IP_Address: Attribute.String;
+    Method: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::request-logger.request-logger',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::request-logger.request-logger',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiTechnicalProgramCommitteeTechnicalProgramCommittee
   extends Schema.CollectionType {
   collectionName: 'technical_program_committees';
@@ -1303,6 +1337,7 @@ declare module '@strapi/types' {
       'api::important-date-page.important-date-page': ApiImportantDatePageImportantDatePage;
       'api::places-to-visit-page.places-to-visit-page': ApiPlacesToVisitPagePlacesToVisitPage;
       'api::publication-page.publication-page': ApiPublicationPagePublicationPage;
+      'api::request-logger.request-logger': ApiRequestLoggerRequestLogger;
       'api::technical-program-committee.technical-program-committee': ApiTechnicalProgramCommitteeTechnicalProgramCommittee;
     }
   }
