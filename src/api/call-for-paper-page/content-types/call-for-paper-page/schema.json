@@ -12,25 +12,10 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "About_CFP": {
-      "type": "text",
-      "required": true
-    },
-    "Proceedings": {
-      "type": "text",
-      "required": true
-    },
-    "Submission_Procedure": {
-      "type": "text",
-      "required": true
-    },
     "Important_Dates": {
       "type": "component",
       "repeatable": false,
       "component": "element.important-dates"
-    },
-    "Further_Details": {
-      "type": "text"
     },
     "CFP_File": {
       "type": "media",
@@ -44,6 +29,18 @@
       "type": "integer",
       "required": true,
       "default": 2024
+    },
+    "About_CFP": {
+      "type": "richtext"
+    },
+    "Proceedings": {
+      "type": "richtext"
+    },
+    "Submission_Procedure": {
+      "type": "richtext"
+    },
+    "Further_Details": {
+      "type": "richtext"
     }
   }
 }

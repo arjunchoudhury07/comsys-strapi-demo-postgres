@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "registration_pages",
+  "info": {
+    "singularName": "registration-page",
+    "pluralName": "registration-pages",
+    "displayName": "Registration_Page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Conference_Registration_Fees_Information": {
+      "type": "richtext"
+    },
+    "Conference_Registration_Guidelines": {
+      "type": "text"
+    },
+    "Conference_Registration_Includes": {
+      "type": "richtext"
+    },
+    "Banking_Info": {
+      "type": "component",
+      "repeatable": false,
+      "component": "element.banking-info"
+    }
+  }
+}

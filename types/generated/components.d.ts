@@ -22,6 +22,23 @@ export interface ElementAcceptedPaper extends Schema.Component {
   };
 }
 
+export interface ElementBankingInfo extends Schema.Component {
+  collectionName: 'components_element_banking_infos';
+  info: {
+    displayName: 'Banking_Info';
+  };
+  attributes: {
+    Account_Name: Attribute.Text;
+    Bank_Name: Attribute.Text;
+    Branch_Name: Attribute.Text;
+    Account_Number: Attribute.Text;
+    IFSC_Code: Attribute.Text;
+    MICR_Code: Attribute.Text;
+    SWIFT_Code: Attribute.Text;
+    Purpose: Attribute.Text;
+  };
+}
+
 export interface ElementCallForAdvertisement extends Schema.Component {
   collectionName: 'components_element_call_for_advertisements';
   info: {
@@ -204,6 +221,7 @@ declare module '@strapi/types' {
     export interface Components {
       'element.about-conference': ElementAboutConference;
       'element.accepted-paper': ElementAcceptedPaper;
+      'element.banking-info': ElementBankingInfo;
       'element.call-for-advertisement': ElementCallForAdvertisement;
       'element.call-for-sponsorship': ElementCallForSponsorship;
       'element.distinguished-speaker': ElementDistinguishedSpeaker;

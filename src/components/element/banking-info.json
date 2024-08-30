@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_element_banking_infos",
+  "info": {
+    "displayName": "Banking_Info"
+  },
+  "options": {},
+  "attributes": {
+    "Account_Name": {
+      "type": "text"
+    },
+    "Bank_Name": {
+      "type": "text"
+    },
+    "Branch_Name": {
+      "type": "text"
+    },
+    "Account_Number": {
+      "type": "text"
+    },
+    "IFSC_Code": {
+      "type": "text"
+    },
+    "MICR_Code": {
+      "type": "text"
+    },
+    "SWIFT_Code": {
+      "type": "text"
+    },
+    "Purpose": {
+      "type": "text"
+    }
+  }
+}

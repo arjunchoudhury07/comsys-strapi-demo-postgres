@@ -903,15 +903,15 @@ export interface ApiCallForPaperPageCallForPaperPage
     draftAndPublish: true;
   };
   attributes: {
-    About_CFP: Attribute.Text & Attribute.Required;
-    Proceedings: Attribute.Text & Attribute.Required;
-    Submission_Procedure: Attribute.Text & Attribute.Required;
     Important_Dates: Attribute.Component<'element.important-dates'>;
-    Further_Details: Attribute.Text;
     CFP_File: Attribute.Media<'files'> & Attribute.Required;
     Conference_Year: Attribute.Integer &
       Attribute.Required &
       Attribute.DefaultTo<2024>;
+    About_CFP: Attribute.RichText;
+    Proceedings: Attribute.RichText;
+    Submission_Procedure: Attribute.RichText;
+    Further_Details: Attribute.RichText;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1238,6 +1238,41 @@ export interface ApiPublicationPagePublicationPage
   };
 }
 
+export interface ApiRegistrationPageRegistrationPage
+  extends Schema.CollectionType {
+  collectionName: 'registration_pages';
+  info: {
+    singularName: 'registration-page';
+    pluralName: 'registration-pages';
+    displayName: 'Registration_Page';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Conference_Registration_Fees_Information: Attribute.RichText;
+    Conference_Registration_Guidelines: Attribute.Text;
+    Conference_Registration_Includes: Attribute.RichText;
+    Banking_Info: Attribute.Component<'element.banking-info'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::registration-page.registration-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::registration-page.registration-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiTechnicalProgramCommitteeTechnicalProgramCommittee
   extends Schema.CollectionType {
   collectionName: 'technical_program_committees';
@@ -1302,6 +1337,7 @@ declare module '@strapi/types' {
       'api::important-date-page.important-date-page': ApiImportantDatePageImportantDatePage;
       'api::places-to-visit-page.places-to-visit-page': ApiPlacesToVisitPagePlacesToVisitPage;
       'api::publication-page.publication-page': ApiPublicationPagePublicationPage;
+      'api::registration-page.registration-page': ApiRegistrationPageRegistrationPage;
       'api::technical-program-committee.technical-program-committee': ApiTechnicalProgramCommitteeTechnicalProgramCommittee;
     }
   }
