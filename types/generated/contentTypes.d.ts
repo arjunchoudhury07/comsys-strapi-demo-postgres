@@ -908,9 +908,9 @@ export interface ApiCallForPaperPageCallForPaperPage
     Conference_Year: Attribute.Integer &
       Attribute.Required &
       Attribute.DefaultTo<2024>;
-    About_CFP: Attribute.RichText;
     Proceedings: Attribute.RichText;
     Submission_Procedure: Attribute.RichText;
+    About_CFP: Attribute.RichText;
     Further_Details: Attribute.RichText;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -1255,6 +1255,9 @@ export interface ApiRegistrationPageRegistrationPage
     Conference_Registration_Guidelines: Attribute.Text;
     Conference_Registration_Includes: Attribute.RichText;
     Banking_Info: Attribute.Component<'element.banking-info'>;
+    Conference_Year: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'2024'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

@@ -25,6 +25,12 @@
       "type": "component",
       "repeatable": false,
       "component": "element.banking-info"
+    },
+    "Conference_Year": {
+      "type": "string",
+      "default": "2024",
+      "unique": false,
+      "required": true
     }
   }
 }

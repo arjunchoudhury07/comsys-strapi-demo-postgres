@@ -30,13 +30,13 @@
       "required": true,
       "default": 2024
     },
-    "About_CFP": {
-      "type": "richtext"
-    },
     "Proceedings": {
       "type": "richtext"
     },
     "Submission_Procedure": {
+      "type": "richtext"
+    },
+    "About_CFP": {
       "type": "richtext"
     },
     "Further_Details": {
