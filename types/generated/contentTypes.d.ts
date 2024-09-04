@@ -1238,6 +1238,43 @@ export interface ApiPublicationPagePublicationPage
   };
 }
 
+export interface ApiRegistrationPageRegistrationPage
+  extends Schema.CollectionType {
+  collectionName: 'registration_pages';
+  info: {
+    singularName: 'registration-page';
+    pluralName: 'registration-pages';
+    displayName: 'Registration_Page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Conference_Year: Attribute.Integer &
+      Attribute.Required &
+      Attribute.DefaultTo<2024>;
+    Conference_Registration_Fees_Information: Attribute.RichText;
+    Conference_Registration_Guidelines: Attribute.RichText;
+    Conference_Registration_Includes: Attribute.RichText;
+    Banking_Info: Attribute.Component<'element.banking-info'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::registration-page.registration-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::registration-page.registration-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiRequestLoggerRequestLogger extends Schema.CollectionType {
   collectionName: 'request_loggers';
   info: {
@@ -1337,6 +1374,7 @@ declare module '@strapi/types' {
       'api::important-date-page.important-date-page': ApiImportantDatePageImportantDatePage;
       'api::places-to-visit-page.places-to-visit-page': ApiPlacesToVisitPagePlacesToVisitPage;
       'api::publication-page.publication-page': ApiPublicationPagePublicationPage;
+      'api::registration-page.registration-page': ApiRegistrationPageRegistrationPage;
       'api::request-logger.request-logger': ApiRequestLoggerRequestLogger;
       'api::technical-program-committee.technical-program-committee': ApiTechnicalProgramCommitteeTechnicalProgramCommittee;
     }
