@@ -903,15 +903,15 @@ export interface ApiCallForPaperPageCallForPaperPage
     draftAndPublish: true;
   };
   attributes: {
-    About_CFP: Attribute.Text & Attribute.Required;
-    Proceedings: Attribute.Text & Attribute.Required;
-    Submission_Procedure: Attribute.Text & Attribute.Required;
     Important_Dates: Attribute.Component<'element.important-dates'>;
-    Further_Details: Attribute.Text;
     CFP_File: Attribute.Media<'files'> & Attribute.Required;
     Conference_Year: Attribute.Integer &
       Attribute.Required &
       Attribute.DefaultTo<2024>;
+    About_CFP: Attribute.RichText;
+    Submission_Procedure: Attribute.RichText;
+    Further_Details: Attribute.RichText;
+    Proceedings: Attribute.RichText;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
