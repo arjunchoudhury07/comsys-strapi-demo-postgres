@@ -856,6 +856,36 @@ export interface ApiAcceptedPaperPageAcceptedPaperPage
   };
 }
 
+export interface ApiAlertBoxAlertBox extends Schema.CollectionType {
+  collectionName: 'alert_boxes';
+  info: {
+    singularName: 'alert-box';
+    pluralName: 'alert-boxes';
+    displayName: 'Alert_Box';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Important_Message: Attribute.RichText;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::alert-box.alert-box',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::alert-box.alert-box',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiCallForAdvertisementPageCallForAdvertisementPage
   extends Schema.CollectionType {
   collectionName: 'call_for_advertisement_pages';
@@ -1209,17 +1239,19 @@ export interface ApiPublicationPagePublicationPage
     singularName: 'publication-page';
     pluralName: 'publication-pages';
     displayName: 'Publication_Page';
-    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    Indexed_By: Attribute.Component<'element.indexed-by', true>;
-    Conference_Year: Attribute.Integer &
+    Conference_year: Attribute.Integer &
       Attribute.Required &
-      Attribute.DefaultTo<2024>;
-    About_Publication: Attribute.Component<'element.publication'>;
+      Attribute.DefaultTo<2023>;
+    Proceedings_Details: Attribute.RichText;
+    Proceedings_Image: Attribute.Media<'images'>;
+    Indexing_Details: Attribute.RichText;
+    Publisher_Logo: Attribute.Media<'images'>;
+    Indexed_By: Attribute.Component<'element.indexed-by', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1364,6 +1396,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::about-us-page.about-us-page': ApiAboutUsPageAboutUsPage;
       'api::accepted-paper-page.accepted-paper-page': ApiAcceptedPaperPageAcceptedPaperPage;
+      'api::alert-box.alert-box': ApiAlertBoxAlertBox;
       'api::call-for-advertisement-page.call-for-advertisement-page': ApiCallForAdvertisementPageCallForAdvertisementPage;
       'api::call-for-paper-page.call-for-paper-page': ApiCallForPaperPageCallForPaperPage;
       'api::call-for-sponsorship-page.call-for-sponsorship-page': ApiCallForSponsorshipPageCallForSponsorshipPage;

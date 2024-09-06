@@ -146,8 +146,8 @@ export interface ElementIndexedBy extends Schema.Component {
     displayName: 'Indexed_By';
   };
   attributes: {
-    Logo: Attribute.Media<'images'>;
     Title: Attribute.String;
+    Logo: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
   };
 }
 
@@ -176,19 +176,6 @@ export interface ElementPlacesToVisit extends Schema.Component {
     Place_Image: Attribute.Media<'images'>;
     Url_To_Know_More: Attribute.Text & Attribute.DefaultTo<'#'>;
     Place_Image_URL: Attribute.Text;
-  };
-}
-
-export interface ElementPublication extends Schema.Component {
-  collectionName: 'components_element_publications';
-  info: {
-    displayName: 'Publication';
-  };
-  attributes: {
-    Book_Description: Attribute.Text;
-    Book_Image: Attribute.Media<'images', true>;
-    Index_Description: Attribute.Text;
-    Publisher_Image: Attribute.Media<'images'>;
   };
 }
 
@@ -233,7 +220,6 @@ declare module '@strapi/types' {
       'element.indexed-by': ElementIndexedBy;
       'element.latest-news': ElementLatestNews;
       'element.places-to-visit': ElementPlacesToVisit;
-      'element.publication': ElementPublication;
       'element.tpc': ElementTpc;
       'element.track-details': ElementTrackDetails;
     }

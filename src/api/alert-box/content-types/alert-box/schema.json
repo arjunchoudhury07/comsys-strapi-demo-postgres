@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "alert_boxes",
+  "info": {
+    "singularName": "alert-box",
+    "pluralName": "alert-boxes",
+    "displayName": "Alert_Box"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Important_Message": {
+      "type": "richtext"
+    }
+  }
+}
