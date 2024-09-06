@@ -4,7 +4,8 @@
   "info": {
     "singularName": "alert-box",
     "pluralName": "alert-boxes",
-    "displayName": "Alert_Box"
+    "displayName": "Alert_Box",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -13,6 +14,11 @@
   "attributes": {
     "Important_Message": {
       "type": "richtext"
+    },
+    "Conference_Year": {
+      "type": "integer",
+      "required": true,
+      "default": 2023
     }
   }
 }

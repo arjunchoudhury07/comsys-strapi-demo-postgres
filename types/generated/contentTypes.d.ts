@@ -862,12 +862,16 @@ export interface ApiAlertBoxAlertBox extends Schema.CollectionType {
     singularName: 'alert-box';
     pluralName: 'alert-boxes';
     displayName: 'Alert_Box';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     Important_Message: Attribute.RichText;
+    Conference_Year: Attribute.Integer &
+      Attribute.Required &
+      Attribute.DefaultTo<2023>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
