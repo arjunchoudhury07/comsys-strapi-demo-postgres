@@ -964,6 +964,39 @@ export interface ApiCallForPaperPageCallForPaperPage
   };
 }
 
+export interface ApiCallForSpecialSessionPageCallForSpecialSessionPage
+  extends Schema.CollectionType {
+  collectionName: 'call_for_special_session_pages';
+  info: {
+    singularName: 'call-for-special-session-page';
+    pluralName: 'call-for-special-session-pages';
+    displayName: 'Call_For_Special_Session_Page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Session_Description: Attribute.Blocks;
+    Session_PDF: Attribute.Media<'files'>;
+    Conference_Year: Attribute.Integer;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::call-for-special-session-page.call-for-special-session-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::call-for-special-session-page.call-for-special-session-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiCallForSponsorshipPageCallForSponsorshipPage
   extends Schema.CollectionType {
   collectionName: 'call_for_sponsorship_pages';
@@ -1403,6 +1436,7 @@ declare module '@strapi/types' {
       'api::alert-box.alert-box': ApiAlertBoxAlertBox;
       'api::call-for-advertisement-page.call-for-advertisement-page': ApiCallForAdvertisementPageCallForAdvertisementPage;
       'api::call-for-paper-page.call-for-paper-page': ApiCallForPaperPageCallForPaperPage;
+      'api::call-for-special-session-page.call-for-special-session-page': ApiCallForSpecialSessionPageCallForSpecialSessionPage;
       'api::call-for-sponsorship-page.call-for-sponsorship-page': ApiCallForSponsorshipPageCallForSponsorshipPage;
       'api::committee.committee': ApiCommitteeCommittee;
       'api::gallery-page.gallery-page': ApiGalleryPageGalleryPage;
