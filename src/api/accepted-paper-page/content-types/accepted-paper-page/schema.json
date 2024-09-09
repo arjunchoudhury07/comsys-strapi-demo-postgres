@@ -4,22 +4,22 @@
   "info": {
     "singularName": "accepted-paper-page",
     "pluralName": "accepted-paper-pages",
-    "displayName": "Accepted_Paper_Page"
+    "displayName": "Accepted_Paper_Page",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "Accepted_Paper": {
-      "type": "component",
-      "repeatable": true,
-      "component": "element.accepted-paper"
+    "Paper_ID": {
+      "type": "integer"
+    },
+    "Paper_Title": {
+      "type": "string"
     },
     "Conference_Year": {
-      "type": "integer",
-      "required": true,
-      "default": 2024
+      "type": "integer"
     }
   }
 }

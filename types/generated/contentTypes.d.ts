@@ -829,15 +829,15 @@ export interface ApiAcceptedPaperPageAcceptedPaperPage
     singularName: 'accepted-paper-page';
     pluralName: 'accepted-paper-pages';
     displayName: 'Accepted_Paper_Page';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    Accepted_Paper: Attribute.Component<'element.accepted-paper', true>;
-    Conference_Year: Attribute.Integer &
-      Attribute.Required &
-      Attribute.DefaultTo<2024>;
+    Paper_ID: Attribute.Integer;
+    Paper_Title: Attribute.String;
+    Conference_Year: Attribute.Integer;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -849,6 +849,40 @@ export interface ApiAcceptedPaperPageAcceptedPaperPage
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::accepted-paper-page.accepted-paper-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiAlertBoxAlertBox extends Schema.CollectionType {
+  collectionName: 'alert_boxes';
+  info: {
+    singularName: 'alert-box';
+    pluralName: 'alert-boxes';
+    displayName: 'Alert_Box';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Important_Message: Attribute.RichText;
+    Conference_Year: Attribute.Integer &
+      Attribute.Required &
+      Attribute.DefaultTo<2023>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::alert-box.alert-box',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::alert-box.alert-box',
       'oneToOne',
       'admin::user'
     > &
@@ -903,15 +937,15 @@ export interface ApiCallForPaperPageCallForPaperPage
     draftAndPublish: true;
   };
   attributes: {
-    About_CFP: Attribute.Text & Attribute.Required;
-    Proceedings: Attribute.Text & Attribute.Required;
-    Submission_Procedure: Attribute.Text & Attribute.Required;
     Important_Dates: Attribute.Component<'element.important-dates'>;
-    Further_Details: Attribute.Text;
     CFP_File: Attribute.Media<'files'> & Attribute.Required;
     Conference_Year: Attribute.Integer &
       Attribute.Required &
       Attribute.DefaultTo<2024>;
+    About_CFP: Attribute.RichText;
+    Submission_Procedure: Attribute.RichText;
+    Further_Details: Attribute.RichText;
+    Proceedings: Attribute.RichText;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -923,6 +957,39 @@ export interface ApiCallForPaperPageCallForPaperPage
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::call-for-paper-page.call-for-paper-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiCallForSpecialSessionPageCallForSpecialSessionPage
+  extends Schema.CollectionType {
+  collectionName: 'call_for_special_session_pages';
+  info: {
+    singularName: 'call-for-special-session-page';
+    pluralName: 'call-for-special-session-pages';
+    displayName: 'Call_For_Special_Session_Page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Session_Description: Attribute.Blocks;
+    Session_PDF: Attribute.Media<'files'>;
+    Conference_Year: Attribute.Integer;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::call-for-special-session-page.call-for-special-session-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::call-for-special-session-page.call-for-special-session-page',
       'oneToOne',
       'admin::user'
     > &
@@ -1209,17 +1276,19 @@ export interface ApiPublicationPagePublicationPage
     singularName: 'publication-page';
     pluralName: 'publication-pages';
     displayName: 'Publication_Page';
-    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    Indexed_By: Attribute.Component<'element.indexed-by', true>;
-    Conference_Year: Attribute.Integer &
+    Conference_year: Attribute.Integer &
       Attribute.Required &
-      Attribute.DefaultTo<2024>;
-    About_Publication: Attribute.Component<'element.publication'>;
+      Attribute.DefaultTo<2023>;
+    Proceedings_Details: Attribute.RichText;
+    Proceedings_Image: Attribute.Media<'images'>;
+    Indexing_Details: Attribute.RichText;
+    Publisher_Logo: Attribute.Media<'images'>;
+    Indexed_By: Attribute.Component<'element.indexed-by', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1238,6 +1307,77 @@ export interface ApiPublicationPagePublicationPage
   };
 }
 
+export interface ApiRegistrationPageRegistrationPage
+  extends Schema.CollectionType {
+  collectionName: 'registration_pages';
+  info: {
+    singularName: 'registration-page';
+    pluralName: 'registration-pages';
+    displayName: 'Registration_Page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Conference_Year: Attribute.Integer &
+      Attribute.Required &
+      Attribute.DefaultTo<2024>;
+    Conference_Registration_Fees_Information: Attribute.RichText;
+    Conference_Registration_Guidelines: Attribute.RichText;
+    Conference_Registration_Includes: Attribute.RichText;
+    Banking_Info: Attribute.Component<'element.banking-info'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::registration-page.registration-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::registration-page.registration-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiRequestLoggerRequestLogger extends Schema.CollectionType {
+  collectionName: 'request_loggers';
+  info: {
+    singularName: 'request-logger';
+    pluralName: 'request-loggers';
+    displayName: 'Request_Logger';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    User: Attribute.String;
+    URL: Attribute.String;
+    Timestamp: Attribute.DateTime;
+    IP_Address: Attribute.String;
+    Method: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::request-logger.request-logger',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::request-logger.request-logger',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiTechnicalProgramCommitteeTechnicalProgramCommittee
   extends Schema.CollectionType {
   collectionName: 'technical_program_committees';
@@ -1245,15 +1385,16 @@ export interface ApiTechnicalProgramCommitteeTechnicalProgramCommittee
     singularName: 'technical-program-committee';
     pluralName: 'technical-program-committees';
     displayName: 'Technical_Program_Committee';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    TPC: Attribute.Component<'element.tpc', true>;
-    Conference_Year: Attribute.Integer &
-      Attribute.Required &
-      Attribute.DefaultTo<2024>;
+    Name: Attribute.String & Attribute.Required;
+    Affiliation: Attribute.String;
+    Profile_Link: Attribute.Text;
+    Conference_Year: Attribute.Integer & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1292,8 +1433,10 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::about-us-page.about-us-page': ApiAboutUsPageAboutUsPage;
       'api::accepted-paper-page.accepted-paper-page': ApiAcceptedPaperPageAcceptedPaperPage;
+      'api::alert-box.alert-box': ApiAlertBoxAlertBox;
       'api::call-for-advertisement-page.call-for-advertisement-page': ApiCallForAdvertisementPageCallForAdvertisementPage;
       'api::call-for-paper-page.call-for-paper-page': ApiCallForPaperPageCallForPaperPage;
+      'api::call-for-special-session-page.call-for-special-session-page': ApiCallForSpecialSessionPageCallForSpecialSessionPage;
       'api::call-for-sponsorship-page.call-for-sponsorship-page': ApiCallForSponsorshipPageCallForSponsorshipPage;
       'api::committee.committee': ApiCommitteeCommittee;
       'api::gallery-page.gallery-page': ApiGalleryPageGalleryPage;
@@ -1302,6 +1445,8 @@ declare module '@strapi/types' {
       'api::important-date-page.important-date-page': ApiImportantDatePageImportantDatePage;
       'api::places-to-visit-page.places-to-visit-page': ApiPlacesToVisitPagePlacesToVisitPage;
       'api::publication-page.publication-page': ApiPublicationPagePublicationPage;
+      'api::registration-page.registration-page': ApiRegistrationPageRegistrationPage;
+      'api::request-logger.request-logger': ApiRequestLoggerRequestLogger;
       'api::technical-program-committee.technical-program-committee': ApiTechnicalProgramCommitteeTechnicalProgramCommittee;
     }
   }

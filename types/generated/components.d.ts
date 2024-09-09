@@ -22,6 +22,23 @@ export interface ElementAcceptedPaper extends Schema.Component {
   };
 }
 
+export interface ElementBankingInfo extends Schema.Component {
+  collectionName: 'components_element_banking_infos';
+  info: {
+    displayName: 'Banking_Info';
+  };
+  attributes: {
+    Account_Name: Attribute.String;
+    Bank_Name: Attribute.String;
+    Branch_Name: Attribute.String;
+    Account_Number: Attribute.String;
+    IFSC_Code: Attribute.String;
+    MICR_Code: Attribute.String;
+    SWIFT_Code: Attribute.String;
+    Purpose: Attribute.String;
+  };
+}
+
 export interface ElementCallForAdvertisement extends Schema.Component {
   collectionName: 'components_element_call_for_advertisements';
   info: {
@@ -129,8 +146,8 @@ export interface ElementIndexedBy extends Schema.Component {
     displayName: 'Indexed_By';
   };
   attributes: {
-    Logo: Attribute.Media<'images'>;
     Title: Attribute.String;
+    Logo: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
   };
 }
 
@@ -159,19 +176,6 @@ export interface ElementPlacesToVisit extends Schema.Component {
     Place_Image: Attribute.Media<'images'>;
     Url_To_Know_More: Attribute.Text & Attribute.DefaultTo<'#'>;
     Place_Image_URL: Attribute.Text;
-  };
-}
-
-export interface ElementPublication extends Schema.Component {
-  collectionName: 'components_element_publications';
-  info: {
-    displayName: 'Publication';
-  };
-  attributes: {
-    Book_Description: Attribute.Text;
-    Book_Image: Attribute.Media<'images', true>;
-    Index_Description: Attribute.Text;
-    Publisher_Image: Attribute.Media<'images'>;
   };
 }
 
@@ -204,6 +208,7 @@ declare module '@strapi/types' {
     export interface Components {
       'element.about-conference': ElementAboutConference;
       'element.accepted-paper': ElementAcceptedPaper;
+      'element.banking-info': ElementBankingInfo;
       'element.call-for-advertisement': ElementCallForAdvertisement;
       'element.call-for-sponsorship': ElementCallForSponsorship;
       'element.distinguished-speaker': ElementDistinguishedSpeaker;
@@ -215,7 +220,6 @@ declare module '@strapi/types' {
       'element.indexed-by': ElementIndexedBy;
       'element.latest-news': ElementLatestNews;
       'element.places-to-visit': ElementPlacesToVisit;
-      'element.publication': ElementPublication;
       'element.tpc': ElementTpc;
       'element.track-details': ElementTrackDetails;
     }

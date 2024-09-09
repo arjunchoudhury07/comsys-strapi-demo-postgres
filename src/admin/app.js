@@ -6,7 +6,7 @@ export default {
     },
     // Replace the favicon
     head: {
-      favicon: logo,
+      logo,
     },
     // Replace the Strapi logo in the main navigation
     menu: {
