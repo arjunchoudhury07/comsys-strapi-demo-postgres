@@ -1,0 +1,28 @@
+{
+    "kind": "collectionType",
+    "collectionName": "call_for_special_session_pages",
+    "info": {
+        "singularName": "call-for-special-session-page",
+        "pluralName": "call-for-special-session-pages",
+        "displayName": "Call_For_Special_Session_Page"
+    },
+    "options": {
+        "draftAndPublish": true
+    },
+    "pluginOptions": {},
+    "attributes": {
+        "Session_Description": {
+            "type": "blocks"
+        },
+        "Session_PDF": {
+            "allowedTypes": [
+                "files"
+            ],
+            "type": "media",
+            "multiple": false
+        },
+        "Conference_Year": {
+            "type": "integer"
+        }
+    }
+}

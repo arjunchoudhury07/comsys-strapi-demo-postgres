@@ -1,0 +1,30 @@
+{
+    "kind": "collectionType",
+    "collectionName": "request_loggers",
+    "info": {
+        "singularName": "request-logger",
+        "pluralName": "request-loggers",
+        "displayName": "Request_Logger"
+    },
+    "options": {
+        "draftAndPublish": true
+    },
+    "pluginOptions": {},
+    "attributes": {
+        "User": {
+            "type": "string"
+        },
+        "URL": {
+            "type": "string"
+        },
+        "Timestamp": {
+            "type": "datetime"
+        },
+        "IP_Address": {
+            "type": "string"
+        },
+        "Method": {
+            "type": "string"
+        }
+    }
+}
