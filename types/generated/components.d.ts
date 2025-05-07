@@ -155,12 +155,14 @@ export interface ElementLatestNews extends Schema.Component {
   collectionName: 'components_element_latest_news';
   info: {
     displayName: 'LatestNews';
+    description: '';
   };
   attributes: {
     noticeTitle: Attribute.Text & Attribute.Required;
     postedOn: Attribute.Date & Attribute.Required;
     isActive: Attribute.Boolean;
     viewNotice: Attribute.Media<'images' | 'files'>;
+    Notice_URL: Attribute.Text;
   };
 }
 

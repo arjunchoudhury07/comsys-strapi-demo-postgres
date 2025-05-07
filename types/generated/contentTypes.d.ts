@@ -937,7 +937,6 @@ export interface ApiCallForPaperPageCallForPaperPage
     draftAndPublish: true;
   };
   attributes: {
-    Important_Dates: Attribute.Component<'element.important-dates'>;
     CFP_File: Attribute.Media<'files'> & Attribute.Required;
     Conference_Year: Attribute.Integer &
       Attribute.Required &

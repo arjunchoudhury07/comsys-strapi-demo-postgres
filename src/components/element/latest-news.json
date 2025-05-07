@@ -1,7 +1,8 @@
 {
   "collectionName": "components_element_latest_news",
   "info": {
-    "displayName": "LatestNews"
+    "displayName": "LatestNews",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -17,12 +18,16 @@
       "type": "boolean"
     },
     "viewNotice": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
+    },
+    "Notice_URL": {
+      "type": "text"
     }
   }
 }

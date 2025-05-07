@@ -12,11 +12,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "Important_Dates": {
-      "type": "component",
-      "repeatable": false,
-      "component": "element.important-dates"
-    },
     "CFP_File": {
       "type": "media",
       "multiple": false,
