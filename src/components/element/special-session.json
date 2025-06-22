@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_element_special_sessions",
+  "info": {
+    "displayName": "special-session"
+  },
+  "options": {},
+  "attributes": {
+    "Session_No": {
+      "type": "string",
+      "required": true
+    },
+    "Special_Session_Title": {
+      "type": "string",
+      "required": true
+    },
+    "Session_Info": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": true,
+      "required": false
+    },
+    "Session_Link": {
+      "type": "string"
+    }
+  }
+}

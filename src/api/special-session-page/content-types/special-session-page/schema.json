@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "special_session_pages",
+  "info": {
+    "singularName": "special-session-page",
+    "pluralName": "special-session-pages",
+    "displayName": "Special_Session_Page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Special_Session": {
+      "type": "component",
+      "repeatable": true,
+      "component": "element.special-session"
+    },
+    "Conference_year": {
+      "type": "integer",
+      "required": true,
+      "default": 2025
+    }
+  }
+}

@@ -181,6 +181,19 @@ export interface ElementPlacesToVisit extends Schema.Component {
   };
 }
 
+export interface ElementSpecialSession extends Schema.Component {
+  collectionName: 'components_element_special_sessions';
+  info: {
+    displayName: 'special-session';
+  };
+  attributes: {
+    Session_No: Attribute.String & Attribute.Required;
+    Special_Session_Title: Attribute.String & Attribute.Required;
+    Session_Info: Attribute.Media<'images' | 'files', true>;
+    Session_Link: Attribute.String;
+  };
+}
+
 export interface ElementTpc extends Schema.Component {
   collectionName: 'components_element_tpcs';
   info: {
@@ -222,6 +235,7 @@ declare module '@strapi/types' {
       'element.indexed-by': ElementIndexedBy;
       'element.latest-news': ElementLatestNews;
       'element.places-to-visit': ElementPlacesToVisit;
+      'element.special-session': ElementSpecialSession;
       'element.tpc': ElementTpc;
       'element.track-details': ElementTrackDetails;
     }
