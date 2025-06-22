@@ -1162,6 +1162,38 @@ export interface ApiHomePageHomePage extends Schema.CollectionType {
   };
 }
 
+export interface ApiHostingDocumentHostingDocument
+  extends Schema.CollectionType {
+  collectionName: 'hosting_documents';
+  info: {
+    singularName: 'hosting-document';
+    pluralName: 'hosting-documents';
+    displayName: 'Hosting_Document';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Hosting_Details: Attribute.RichText;
+    Miscellaneous: Attribute.RichText;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::hosting-document.hosting-document',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::hosting-document.hosting-document',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiHowToReachPageHowToReachPage extends Schema.CollectionType {
   collectionName: 'how_to_reach_pages';
   info: {
@@ -1191,41 +1223,6 @@ export interface ApiHowToReachPageHowToReachPage extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::how-to-reach-page.how-to-reach-page',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiImportantDatePageImportantDatePage
-  extends Schema.CollectionType {
-  collectionName: 'important_date_pages';
-  info: {
-    singularName: 'important-date-page';
-    pluralName: 'important-date-pages';
-    displayName: 'Important_Date_Page';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    Important_Date: Attribute.Component<'element.important-dates', true> &
-      Attribute.Required;
-    Conference_Year: Attribute.Integer &
-      Attribute.Required &
-      Attribute.DefaultTo<2024>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::important-date-page.important-date-page',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::important-date-page.important-date-page',
       'oneToOne',
       'admin::user'
     > &
@@ -1377,6 +1374,41 @@ export interface ApiRequestLoggerRequestLogger extends Schema.CollectionType {
   };
 }
 
+export interface ApiSpecialSessionPageSpecialSessionPage
+  extends Schema.CollectionType {
+  collectionName: 'special_session_pages';
+  info: {
+    singularName: 'special-session-page';
+    pluralName: 'special-session-pages';
+    displayName: 'Special_Session_Page';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Special_Session: Attribute.Component<'element.special-session', true>;
+    Conference_year: Attribute.Integer &
+      Attribute.Required &
+      Attribute.DefaultTo<2025>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::special-session-page.special-session-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::special-session-page.special-session-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiTechnicalProgramCommitteeTechnicalProgramCommittee
   extends Schema.CollectionType {
   collectionName: 'technical_program_committees';
@@ -1440,12 +1472,13 @@ declare module '@strapi/types' {
       'api::committee.committee': ApiCommitteeCommittee;
       'api::gallery-page.gallery-page': ApiGalleryPageGalleryPage;
       'api::home-page.home-page': ApiHomePageHomePage;
+      'api::hosting-document.hosting-document': ApiHostingDocumentHostingDocument;
       'api::how-to-reach-page.how-to-reach-page': ApiHowToReachPageHowToReachPage;
-      'api::important-date-page.important-date-page': ApiImportantDatePageImportantDatePage;
       'api::places-to-visit-page.places-to-visit-page': ApiPlacesToVisitPagePlacesToVisitPage;
       'api::publication-page.publication-page': ApiPublicationPagePublicationPage;
       'api::registration-page.registration-page': ApiRegistrationPageRegistrationPage;
       'api::request-logger.request-logger': ApiRequestLoggerRequestLogger;
+      'api::special-session-page.special-session-page': ApiSpecialSessionPageSpecialSessionPage;
       'api::technical-program-committee.technical-program-committee': ApiTechnicalProgramCommitteeTechnicalProgramCommittee;
     }
   }

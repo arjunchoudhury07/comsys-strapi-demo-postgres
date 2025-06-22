@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "hosting_documents",
+  "info": {
+    "singularName": "hosting-document",
+    "pluralName": "hosting-documents",
+    "displayName": "Hosting_Document"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Hosting_Details": {
+      "type": "richtext"
+    },
+    "Miscellaneous": {
+      "type": "richtext"
+    }
+  }
+}
