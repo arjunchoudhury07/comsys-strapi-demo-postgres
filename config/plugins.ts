@@ -5,13 +5,18 @@ export default () => ({
   },
   email: {
     config: {
-      provider: "strapi-provider-email-resend",
+      provider: "nodemailer",
       providerOptions: {
-        apiKey: process.env["RESEND_API_KEY"], // Required
+        host: process.env.SMTP_HOST,
+        port: process.env.SMTP_PORT,
+        auth: {
+          user: process.env.EMAIL_USER,
+          pass: process.env.EMAIL_PASSWORD,
+        },
       },
       settings: {
-        defaultFrom: "comsyseducationaltrust@resend.dev", // env('RESEND_DEFAULT_FROM')
-        defaultReplyTo: "me@example.com", // env('RESEND_DEFAULT_FROM')
+        defaultFrom: process.env.EMAIL_USER,
+        defaultReplyTo: process.env.EMAIL_USER,
       },
     },
   },
